@@ -1,0 +1,10 @@
+@model Factory.Models.Engineer
+
+
+<h2>Add an Engineer</h2>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+  <input type="submit" value="Add Engineer"/>
+}
