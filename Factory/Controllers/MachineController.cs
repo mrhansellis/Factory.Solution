@@ -43,5 +43,20 @@ namespace Factory.Controllers
                                 .FirstOrDefault(machine => machine.MachineId == id);
       return View(thisMachine);
     }
+
+    public ActionResult Edit(int id)
+    {
+      Machine thisMachine = _db.Machines.FirstOrDefault(machine => machine.MachineId == id);
+      // probably will scrap this ViewBag.EngineerId = new SelectList(_db.Engineers, "EngineerId", "Name");
+      return View(thisMachine);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Machine machine)
+    {
+      _db.Machines.Update(machine);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
