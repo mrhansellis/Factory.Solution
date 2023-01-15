@@ -11,11 +11,7 @@
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
-  /* //not a relevant feature
-  @Html.Label("Select a Machine License")
-  @Html.DropDownList("MachineId")*/
-
   <input type="submit" value="Save" />
 }
 
-<@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>

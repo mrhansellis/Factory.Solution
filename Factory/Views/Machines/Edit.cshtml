@@ -11,11 +11,7 @@
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
-  /* probably going to scrap this
-  @Html.LabelFor(model => model.JoinEntities)
-  @Html.DropDownList("EngineerId")*/
-
   <input type="submit" value="Save" /> 
 }
 
-<@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Back to list", "Index")</p>
