@@ -7,7 +7,27 @@
 <h4>Engineers</h4>
 
 <p>@Html.ActionLink("Engineer List", "Index", "Engineers")</p>
+@if (Model["engineers"].Length == 0)
+{
+  <p>There are no engineers in the system.</p>
+}
+<ul>
+  @foreach (Engineer eng in Model["engineers"])
+  {
+    <li>@Html.ActionLink(@eng.Name, "Details", "Engineers", new { id = @eng.EngineerId })</li>
+  }
+</ul>
 
 <h4>Machines</h4>
 
 <p>@Html.ActionLink("Machine List", "Index", "Machines")</p>
+@if (Model["machines"].Length == 0)
+{
+  <p>There are no machines in the system.</p>
+}
+<ul>
+  @foreach (Machine mach in Model["machines"])
+  {
+    <li>@Html.ActionLink(@mach.Name, "Details", "Machines", new { id = @mach.MachineId })</li>
+  }
+</ul>
